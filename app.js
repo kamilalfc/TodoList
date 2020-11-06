@@ -14,6 +14,10 @@ filterOption.addEventListener('click', filterTodo);
 function addTodo(event) {
     //prevent form from submitting
     event.preventDefault();
+    if (todoInput.value.trim() === "") {
+      alert("You cannot add a blank item to your to-do list!");
+    } else {
+  
     //todo div
     const todoDiv = document.createElement('div');
     todoDiv.classList.add("todo");
@@ -38,6 +42,7 @@ function addTodo(event) {
     todoList.appendChild(todoDiv);
     //clear todo input value
     todoInput.value="";
+  }
 }
 
 function deleteCheck(e) {
